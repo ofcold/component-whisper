@@ -1,0 +1,36 @@
+{
+	"name": "ofcold/component-whisper",
+	"description": "A powerful Hash data signature verification tool.",
+	"license": "MIT",
+	"homepage": "https://baersi.app",
+	"authors": [
+		{
+			"name": "Bill li",
+			"email": "bill.li@ofcold.com"
+		}
+	],
+	"require": {
+		"php": ">=8.0",
+		"ext-json": "*",
+		"illuminate/collections": "^8.0"
+	},
+	"require-dev": {
+		"mockery/mockery": "^1.3.1",
+		"phpunit/phpunit": "^9.0",
+		"symfony/var-dumper": "6.0.x-dev"
+	},
+	"autoload": {
+		"psr-4": {
+			"Ofcold\\Component\\Whisper\\": "src/"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"Ofcold\\Component\\WhisperTests\\": "tests/"
+		}
+	},
+	"config": {
+		"sort-packages": true
+	},
+	"minimum-stability": "dev"
+}
