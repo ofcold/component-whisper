@@ -134,9 +134,6 @@ class Whisper
 		// compute signature
 		openssl_sign($this->parserItemsToStirng($items), $signature, $pkeyid, OPENSSL_ALGO_SHA256);
 
-		// free the key from memory
-		// openssl_free_key($pkeyid);
-
 		return base64_encode($signature);
 	}
 
@@ -150,8 +147,6 @@ class Whisper
 	 * @param  string $sign
 	 *
 	 * @return boolean
-	 *
-	 * @throws \Ofcold\Component\Exceptions\WhisperValidateException
 	 */
 	public function validate(LazyCollection|array $items, string $sign): bool
 	{
@@ -165,9 +160,6 @@ class Whisper
 			OPENSSL_ALGO_SHA256
 		);
 
-		// free the key from memory
-		// openssl_free_key($pubkeyid);
-//  ?: throw new WhisperValidateException('Request failed, data verification failed!')
 		return $isVerify;
 	}
 }
